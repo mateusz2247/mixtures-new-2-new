@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/pages/HomePage.vue'
 import About from '@/pages/AboutPage.vue'
 import Mixin from '@/pages/MixinPage.vue'
-
+import ErrorPage from '@/pages/ErrorPage.vue'
 const routes = [
   {
     path: '/',
@@ -18,7 +18,13 @@ const routes = [
     path: '/mixin',
     name: 'Mixin',
     component: Mixin
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'ErrorPage',
+    component: ErrorPage
   }
+
 ]
 
 const router = createRouter({
