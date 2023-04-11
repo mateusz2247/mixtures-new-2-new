@@ -1,20 +1,11 @@
 <template>
 	<div id="app">
 		<div class="container">
-			
-
 			<!-- header -->
 			<app-header />
-			<div class="card">
-				<TabMenu
-					style="
-						border-radius: 1rem;
-						box-shadow: 0 20px 40px 0 rgba(107, 154, 212, 0.3);
-						overflow: hidden;
-					"
-					:model="items" />
-				<!-- <router-view /> -->
-			</div>
+
+			<TabMenu :model="items" />
+			<router-view />
 
 			<!-- color mixin -->
 			<!-- <color-mixin /> -->
@@ -41,14 +32,19 @@ export default {
 				{
 					label: "Home",
 					icon: "pi pi-fw pi-home",
+					to:''
 				},
 				{
 					label: "Mixin",
 					icon: "pi pi-fw pi-filter",
+					to:''
+					
 				},
 				{
 					label: "About",
 					icon: "pi pi-fw pi-info",
+					to:''
+					
 				},
 			],
 		};

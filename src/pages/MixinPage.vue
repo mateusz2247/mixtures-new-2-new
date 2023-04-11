@@ -2,7 +2,7 @@
     <div class="page">
   
         <!-- color mixin -->
-        <color-mixin />
+        <ColorMixin />
   
     </div>
   </template>
