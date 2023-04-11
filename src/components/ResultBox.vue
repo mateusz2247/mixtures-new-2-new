@@ -19,7 +19,7 @@
 			:buttonsVisible="false"
 			:size="15"
 			:color="mixtureEffectFill" />
-		<p v-html="mixtureEffectFill"></p>
+		<p v-text="mixtureEffectFill"></p>
 		<button-item
 			@click="$emit('refresh')"
 			:size="4"
@@ -80,7 +80,6 @@ export default {
 			const [redCol, greenCol, blueCol] = this.mixtures.map((item) =>
 				Math.floor(item.amount * 2.5)
 			);
-			console.log(`color/${redCol}/${greenCol}/${blueCol}`);
 			return `color/${redCol}/${greenCol}/${blueCol}`;
 		},
 	},
