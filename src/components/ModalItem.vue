@@ -13,7 +13,7 @@
 
       <footer class="modal__footer">
         <slot name="footer" />
-        <button-item icon="fas fa-times" @click="$emit('cancel')" />
+        <button-item icon="pi pi-fw pi-times" @click="$emit('cancel')" />
       </footer>
     </div>
   </div>

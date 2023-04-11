@@ -53,7 +53,7 @@
    </template>
 
    <template v-slot:footer>
-    <button-item icon="fas fa-thumbs-up" />
+    <button-item icon="pi pi-fw pi-check" />
    </template>
 
 </ModalItem>
