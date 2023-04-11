@@ -17,7 +17,7 @@
 			</div>
 
 			<!-- color mixin -->
-			<color-mixin />
+			<!-- <color-mixin /> -->
 		</div>
 	</div>
 </template>
@@ -25,14 +25,14 @@
 <script>
 import "./styles/global.scss";
 import AppHeader from "./components/AppHeader";
-import ColorMixin from "./components/ColorMixin";
+/* import ColorMixin from "./components/ColorMixin"; */
 import TabMenu from "primevue/tabmenu";
 
 export default {
 	name: "App",
 	components: {
 		AppHeader,
-		ColorMixin,
+		/* ColorMixin */
 		TabMenu,
 	},
 	data() {
@@ -43,11 +43,11 @@ export default {
 					icon: "pi pi-fw pi-home",
 				},
 				{
-					label: "Calendar",
+					label: "Mixin",
 					icon: "pi pi-fw pi-filter",
 				},
 				{
-					label: "Edit",
+					label: "About",
 					icon: "pi pi-fw pi-info",
 				},
 			],
