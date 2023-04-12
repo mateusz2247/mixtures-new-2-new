@@ -40,24 +40,25 @@
 				:font-size="1.5"
 				icon="share-alt" />
 		</RouterLink>
-		<transition name="slide-fade">
-		<ModalItem v-if="modalVisible" @cancel="modalVisible = false">
-			<template v-slot:header> About the app </template>
+		<FadeAnimation>
+			<ModalItem v-if="modalVisible" @cancel="modalVisible = false">
+				<template v-slot:header> About the app </template>
 
-			<template v-slot:body>
-				Mix three colors to create the perfect one!
-			</template>
+				<template v-slot:body>
+					Mix three colors to create the perfect one!
+				</template>
 
-			<template v-slot:footer>
-				<button-item icon="pi pi-fw pi-check" />
-			</template>
-		</ModalItem>
-	</transition>
+				<template v-slot:footer>
+					<button-item icon="pi pi-fw pi-check" />
+				</template>
+			</ModalItem>
+		</FadeAnimation>
 	</div>
 </template>
 
 <script>
 /* import BigMixtureItem from './BigMixtureItem' */
+import FadeAnimation from "./shared/FadeAnimation.vue";
 import ModalItem from "./ModalItem.vue";
 import FlaskItem from "./FlaskItem.vue";
 import ButtonItem from "./shared/ButtonItem.vue";
@@ -88,6 +89,7 @@ export default {
 		ButtonItem,
 		FlaskItem,
 		ModalItem,
+		FadeAnimation,
 	},
 };
 </script>
@@ -112,7 +114,7 @@ export default {
 		margin-top: -0.5rem;
 	}
 }
-.slide-fade-enter-active {
+/* .slide-fade-enter-active {
   transition: opacity .3s;
 }
 
@@ -133,5 +135,5 @@ export default {
 
 .slide-fade-leave-to {
   opacity: 0;
-}
+} */
 </style>
