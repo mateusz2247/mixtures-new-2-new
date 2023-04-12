@@ -35,17 +35,17 @@ export default {
 				{
 					label: "Home",
 					icon: "pi pi-fw pi-home",
-					to: "/",
+					to: "",
 				},
 				{
 					label: "Mixin",
 					icon: "pi pi-fw pi-filter",
-					to: "/mixin",
+					to: "",
 				},
 				{
 					label: "About",
 					icon: "pi pi-fw pi-info",
-					to: "/about",
+					to: "",
 				},
 			],
 		};

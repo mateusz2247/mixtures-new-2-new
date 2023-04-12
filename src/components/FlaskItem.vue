@@ -1,5 +1,5 @@
 <template>
-	<div ref="flk" class="flask animate__animated" :style="flaskStyle">
+	<div ref="flk" class="flask animate__animated" :style="flaskStyle" :class="{ animate__shakeY: isAnimated }" @animationend="isAnimated = false">
 		<!-- decrement btn -->
 		<ButtonItem
 			v-if="buttonsVisible"
@@ -27,6 +27,12 @@
 import ButtonItem from "./shared/ButtonItem.vue";
 export default {
 	name: "FlaskItem",
+  data(){
+    return{
+      isAnimated: false
+    }
+
+  },  
 	props: {
 		size: {
 			type: Number,
@@ -54,7 +60,7 @@ export default {
 	methods: {
 		flkMethod() {
 			this.$refs.flk.classList.add("animate__shakeY");
-      setTimeout (setTimeout(() => { this.$refs.flk.classList.remove("animate__shakeY") }, 300))
+      this.isAnimated=true;
       console.log("wykonalem funkcje")
 
 		},
