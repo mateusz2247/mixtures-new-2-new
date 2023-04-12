@@ -13,7 +13,9 @@
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
     "primevue": "^3.26.1",
+    "style-resources-loader": "^1.5.0",
     "vue": "^3.2.13",
+    "vue-cli-plugin-style-resources-loader": "^0.1.5",
     "vue-router": "4"
   },
   "devDependencies": {

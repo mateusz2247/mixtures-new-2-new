@@ -8,6 +8,7 @@
 			<SlideFadeAnimation class="animate__fast">
 				<router-view />
 			</SlideFadeAnimation>
+			
 			<!-- color mixin -->
 			<!-- <color-mixin /> -->
 		</div>
@@ -18,6 +19,7 @@
 import "./styles/global.scss";
 import AppHeader from "./components/AppHeader";
 /* import ColorMixin from "./components/ColorMixin"; */
+
 import TabMenu from "primevue/tabmenu";
 import SlideFadeAnimation from "@/components/shared/SlideFadeAnimation.vue";
 
