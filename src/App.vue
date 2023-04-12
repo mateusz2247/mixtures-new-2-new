@@ -5,7 +5,7 @@
 			<app-header />
 
 			<TabMenu :model="items" />
-			<SlideFadeAnimation>
+			<SlideFadeAnimation class="animate__fast">
 				<router-view />
 			</SlideFadeAnimation>
 			<!-- color mixin -->
@@ -35,17 +35,17 @@ export default {
 				{
 					label: "Home",
 					icon: "pi pi-fw pi-home",
-					to: "",
+					to: "/",
 				},
 				{
 					label: "Mixin",
 					icon: "pi pi-fw pi-filter",
-					to: "",
+					to: "/mixin",
 				},
 				{
 					label: "About",
 					icon: "pi pi-fw pi-info",
-					to: "",
+					to: "/about",
 				},
 			],
 		};

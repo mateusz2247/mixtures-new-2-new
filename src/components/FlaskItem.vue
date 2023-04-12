@@ -1,5 +1,5 @@
 <template>
-	<div ref="flk" class="flask fadeIn" :style="flaskStyle">
+	<div ref="flk" class="flask animate__animated" :style="flaskStyle">
 		<!-- decrement btn -->
 		<ButtonItem
 			v-if="buttonsVisible"
@@ -53,8 +53,8 @@ export default {
 
 	methods: {
 		flkMethod() {
-			this.$refs.flk.classList.add("zoomIn");
-      setTimeout (setTimeout(() => { this.$refs.flk.classList.remove("zoomIn") }, 300))
+			this.$refs.flk.classList.add("animate__shakeY");
+      setTimeout (setTimeout(() => { this.$refs.flk.classList.remove("animate__shakeY") }, 300))
       console.log("wykonalem funkcje")
 
 		},
@@ -145,7 +145,7 @@ export default {
 		}
 	}
 }
-.fadeIn {
+/* .fadeIn {
 	animation-name: "fadeIn";
 	animation-iteration-count: 1;
 	animation-duration: 0.3s;
@@ -180,5 +180,5 @@ export default {
 	100% {
 		opacity: 1;
 	}
-}
+} */
 </style>
