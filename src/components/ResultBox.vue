@@ -40,7 +40,7 @@
 				:font-size="1.5"
 				icon="share-alt" />
 		</RouterLink>
-
+		<transition name="slide-fade">
 		<ModalItem v-if="modalVisible" @cancel="modalVisible = false">
 			<template v-slot:header> About the app </template>
 
@@ -52,6 +52,7 @@
 				<button-item icon="pi pi-fw pi-check" />
 			</template>
 		</ModalItem>
+	</transition>
 	</div>
 </template>
 
@@ -110,5 +111,27 @@ export default {
 	&:hover {
 		margin-top: -0.5rem;
 	}
+}
+.slide-fade-enter-active {
+  transition: opacity .3s;
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+}
+
+.slide-fade-enter-to {
+  opacity: 1;
+}
+.slide-fade-leave-active {
+  transition: opacity .3s;
+}
+
+.slide-fade-leave-from {
+  opacity: 1;
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
 }
 </style>
