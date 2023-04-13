@@ -31,7 +31,7 @@ export default {
 		},
 	}, */
 	mounted() {
-		setTimeout((this.isAnimated = true), 2000);
+		setTimeout(() => { this.isAnimated = true }, 2000);
 	},
 };
 </script>

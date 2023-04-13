@@ -5,10 +5,14 @@
 			<app-header />
 
 			<TabMenu :model="items" />
-			<SlideFadeAnimation class="animate__fast">
+			<transition
+				mode="out-in"
+				name="custom-transition"
+				enter-active-class="animate__animated animate__fadeInLeft">
+				<!-- <SlideFadeAnimation class="animate__fast"> -->
 				<router-view />
-			</SlideFadeAnimation>
-			
+				<!-- </SlideFadeAnimation> -->
+			</transition>
 			<!-- color mixin -->
 			<!-- <color-mixin /> -->
 		</div>
@@ -21,7 +25,7 @@ import AppHeader from "./components/AppHeader";
 /* import ColorMixin from "./components/ColorMixin"; */
 
 import TabMenu from "primevue/tabmenu";
-import SlideFadeAnimation from "@/components/shared/SlideFadeAnimation.vue";
+/* import SlideFadeAnimation from "@/components/shared/SlideFadeAnimation.vue"; */
 
 export default {
 	name: "App",
@@ -29,7 +33,7 @@ export default {
 		AppHeader,
 		/* ColorMixin */
 		TabMenu,
-		SlideFadeAnimation,
+		/* SlideFadeAnimation, */
 	},
 	data() {
 		return {
@@ -37,17 +41,17 @@ export default {
 				{
 					label: "Home",
 					icon: "pi pi-fw pi-home",
-					to: "",
+					to: "/",
 				},
 				{
 					label: "Mixin",
 					icon: "pi pi-fw pi-filter",
-					to: "",
+					to: "/mixin",
 				},
 				{
 					label: "About",
 					icon: "pi pi-fw pi-info",
-					to: "",
+					to: "/about",
 				},
 			],
 		};
