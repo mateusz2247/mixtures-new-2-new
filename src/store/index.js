@@ -15,4 +15,12 @@ export default createStore({
 			state.colors.splice(color, 1);
 		},
 	},
+  getters: {
+    RGBColors (state) {
+      return state.colors.map(color => `rgb(${color.red}, ${color.green}, ${color.blue})`)
+    },
+    CountColors (state) {
+      return state.colors.length
+    }
+  }
 });

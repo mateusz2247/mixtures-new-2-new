@@ -20,7 +20,7 @@
 			:size="15"
 			:color="mixtureEffectFill" />
 		<p v-text="mixtureEffectFill"></p>
-		<p>Ther are {{ colors.length }} colors in your pocket</p>
+		<p>Ther are {{ howColors }} colors in your pocket</p>
 		<button-item
 			@click="$emit('refresh')"
 			:size="4"
@@ -70,7 +70,7 @@ import ModalItem from "./ModalItem.vue";
 import FlaskItem from "./FlaskItem.vue";
 import ButtonItem from "./shared/ButtonItem.vue";
 import { mapState } from "vuex";
-import { mapMutations } from "vuex";
+import { mapMutations, mapGetters } from "vuex";
 export default {
 	data: () => ({ modalVisible: false }),
 	name: "ResultsBox",
@@ -104,6 +104,7 @@ export default {
 			);
 			return `rgb(${redCol}, ${greenCol}, ${blueCol})`;
 		},
+		...mapGetters({ howColors: "CountColors" }),
 		createLink() {
 			const [redCol, greenCol, blueCol] = this.mixtures.map((item) =>
 				Math.floor(item.amount * 2.5)
