@@ -28,22 +28,26 @@ export default createStore({
 		REMOVE_COLOR(state, color) {
 			state.colors.splice(color, 1);
 		},
-    RESET_COLORS(state) {
-			state.mixtures2 = state.mixtures2.map(item => ({ ...item, amount: 50 }))
+		RESET_COLORS(state) {
+			state.mixtures2 = state.mixtures2.map((item) => ({
+				...item,
+				amount: 50,
+			}));
 		},
-    ICREMENT_COLOR(state,index){
-      /* const mixture = state.mixtures2[index] */
-      /* if (mixture.amount === 100) return false */
-      console.log(index);
-      state.mixture2[index].amount++
-    },
-    DECREMENT_COLOR(state,index){
-      /* const mixture = state.mixtures2[index] */
-      /* if (mixture.amount === 100) return false */
-      console.log(index);
-      state.mixture2[index].amount--
-    }
-
+		ICREMENT_COLOR(state, index) {
+			/* const mixture = state.mixtures2[index] */
+			/* if (mixture.amount === 100) return false */
+			console.log(index);
+			if (state.mixtures2[index].amount === 100) return false;
+			state.mixtures2[index].amount++;
+		},
+		DECREMENT_COLOR(state, index) {
+			/* const mixture = state.mixtures2[index] */
+			/* if (mixture.amount === 100) return false */
+			console.log(index);
+			if (state.mixtures2[index].amount === 0) return false;
+			state.mixtures2[index].amount--;
+		},
 	},
 	getters: {
 		RGBColors(state) {

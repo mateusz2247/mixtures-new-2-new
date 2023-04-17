@@ -23,7 +23,7 @@
 <script>
 import PageTitle from "@/components/shared/PageTitle.vue";
 import FlaskItem from "@/components/FlaskItem.vue";
-import {/* mapState, */ mapGetters } from "vuex";
+import { /* mapState, */ mapGetters } from "vuex";
 export default {
 	name: "MyColorsPage",
 	components: { PageTitle, FlaskItem },
@@ -35,6 +35,8 @@ export default {
 			this.$store.commit("REMOVE_COLOR", index);
 		},
 	},
-	computed:{ /* ...mapState(["colors"]), */...mapGetters({ colors: 'RGBColors' })}
+	computed: {
+		/* ...mapState(["colors"]), */ ...mapGetters({ colors: "RGBColors" }),
+	},
 };
 </script>

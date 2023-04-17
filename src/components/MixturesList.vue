@@ -24,7 +24,8 @@ export default {
       required: true
     }
   },
-  components: { FlaskItem }
+  components: { FlaskItem },
+  
 }
 </script>
 

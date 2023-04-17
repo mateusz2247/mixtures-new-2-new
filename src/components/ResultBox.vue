@@ -22,7 +22,7 @@
 		<p v-text="mixtureEffectFill"></p>
 		<p>Ther are {{ howColors }} colors in your pocket</p>
 		<button-item
-			@click="$emit('refresh')"
+			@click="refresh"
 			:size="4"
 			:movement="-0.5"
 			:font-size="1.5"
@@ -97,6 +97,10 @@ export default {
 		/* 	addColor(payload) {
 			this.$store.commit("ADD_COLOR", payload);
 		}, */
+		refresh() {
+			/* this.mixtures = this.mixtures.map(item => ({ ...item, amount: 50 })) */
+			this.$store.commit("RESET_COLORS");
+		},
 	},
 	computed: {
 		...mapState(["colors"]),

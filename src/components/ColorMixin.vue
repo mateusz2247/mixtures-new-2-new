@@ -1,29 +1,25 @@
 <template>
-  <div>
+	<div>
+		<!-- mixtures list -->
+		<mixtures-list
+			:mixtures="mixtures"
+			@increment="increment"
+			@decrement="decrement" />
 
-    <!-- mixtures list -->
-    <mixtures-list
-      :mixtures="mixtures"
-      @increment="increment"
-      @decrement="decrement" />
-
-    <!-- result box -->
-    <result-box
-      @refresh="refresh"
-      :mixtures="mixtures" />
-
-  </div>
+		<!-- result box -->
+		<result-box :mixtures="mixtures" />
+	</div>
 </template>
 
 <script>
-import MixturesList from './MixturesList'
-import ResultBox from './ResultBox'
-import { mapGetters} from 'vuex'
+import MixturesList from "./MixturesList";
+import ResultBox from "./ResultBox";
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'ColorMixin',
-  data: () => ({
-   /*  mixtures: [
+	name: "ColorMixin",
+	data: () => ({
+		/*  mixtures: [
       {
         variant: 'red',
         amount: 20
@@ -36,29 +32,24 @@ export default {
         variant: 'blue',
         amount: 40
       }] */
-  }),
-  methods: {
-    increment (index) {
-      const mixture = this.mixtures[index]
-      if (mixture.amount === 100) return false
-      mixture.amount++
-    },
+	}),
+	methods: {
+		increment(index) {
+			this.$store.commit("ICREMENT_COLOR", index);
+		},
 
-    decrement (index) {
-      const mixture = this.mixtures[index]
-      if (mixture.amount === 0) return false
-      mixture.amount--
-    },
+		decrement(index) {
+			this.$store.commit("DECREMENT_COLOR", index);
+		},
 
-    refresh () {
-      /* this.mixtures = this.mixtures.map(item => ({ ...item, amount: 50 })) */
-      this.$store.commit('RESET_COLORS')
-    }
-  },
-  computed: mapGetters({ mixtures: 'MixturesList2' }),
-  components: {
-    MixturesList,
-    ResultBox
-  }
-}
+		/* refresh() {
+			this.$store.commit("RESET_COLORS");
+		}, */
+	},
+	computed: mapGetters({ mixtures: "MixturesList2" }),
+	components: {
+		MixturesList,
+		ResultBox,
+	},
+};
 </script>
