@@ -53,6 +53,11 @@ export default {
 					icon: "pi pi-fw pi-info",
 					to: "/about",
 				},
+				{
+					label: "My Colors",
+					icon: "pi pi-fw pi-palette",
+					to: "/mycolors",
+				},
 			],
 		};
 	},
