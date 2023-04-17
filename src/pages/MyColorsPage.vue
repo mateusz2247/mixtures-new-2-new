@@ -12,8 +12,10 @@
 					style="margin: 3rem auto"
 					:amount="100"
 					:buttonsVisible="false"
+					:buttonsVisible2="true"
 					:size="15"
-					:color="funcName(color)" />
+					:color="funcName(color)"
+					@removeColor="removeColor(index)" />
 			</li>
 		</ul>
 	</div>
@@ -28,6 +30,9 @@ export default {
 	methods: {
 		funcName(color) {
 			return `rgb(${color.red}, ${color.green}, ${color.blue})`;
+		},
+		removeColor(index) {
+			this.$store.commit("REMOVE_COLOR", index);
 		},
 	},
 	computed: mapState(["colors"]),

@@ -1,5 +1,5 @@
 <template>
-  <button @click="$emit('click')" :style="btnStyles" class="btn">
+  <button  :style="btnStyles" class="btn">
     <span :class="`pi pi-fw pi-${icon}`" />
   </button>
 </template>

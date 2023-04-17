@@ -1,5 +1,10 @@
 <template>
-	<div ref="flk" class="flask animate__animated" :style="flaskStyle" :class="{ animate__shakeY: isAnimated }" @animationend="isAnimated = false">
+	<div
+		ref="flk"
+		class="flask animate__animated"
+		:style="flaskStyle"
+		:class="{ animate__shakeY: isAnimated }"
+		@animationend="isAnimated = false">
 		<!-- decrement btn -->
 		<ButtonItem
 			v-if="buttonsVisible"
@@ -20,6 +25,12 @@
 				flkMethod();
 				$emit('increment');
 			" />
+		<ButtonItem
+			v-if="buttonsVisible2"
+			class="flask__btn flask__btn--center"
+			icon="trash"
+			:movement="-0.5"
+			@click="$emit('removeColor')" />
 	</div>
 </template>
 
@@ -27,12 +38,11 @@
 import ButtonItem from "./shared/ButtonItem.vue";
 export default {
 	name: "FlaskItem",
-  data(){
-    return{
-      isAnimated: false
-    }
-
-  },  
+	data() {
+		return {
+			isAnimated: false,
+		};
+	},
 	props: {
 		size: {
 			type: Number,
@@ -52,6 +62,10 @@ export default {
 			type: Boolean,
 			default: true,
 		},
+		buttonsVisible2: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	components: {
 		ButtonItem,
@@ -60,9 +74,8 @@ export default {
 	methods: {
 		flkMethod() {
 			this.$refs.flk.classList.add("animate__shakeY");
-      this.isAnimated=true;
-      console.log("wykonalem funkcje")
-
+			this.isAnimated = true;
+			console.log("wykonalem funkcje");
 		},
 	},
 
@@ -92,7 +105,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .flask {
 	display: block;
 	border: 10px solid #ddd;
@@ -148,6 +160,9 @@ export default {
 
 		&--left {
 			left: 1rem;
+		}
+		&--center {
+			left: 6rem;
 		}
 	}
 }

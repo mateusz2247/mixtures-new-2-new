@@ -41,7 +41,12 @@
 				:font-size="1.5"
 				icon="share-alt" />
 		</RouterLink>
-		<button-item @click="saveColor" :size="4" :movement="-0.5" :font-size="1.5" icon="pencil" />
+		<button-item
+			@click="saveColor"
+			:size="4"
+			:movement="-0.5"
+			:font-size="1.5"
+			icon="pencil" />
 		<FadeAnimation>
 			<ModalItem v-if="modalVisible" @cancel="modalVisible = false">
 				<template v-slot:header> About the app </template>
@@ -65,6 +70,7 @@ import ModalItem from "./ModalItem.vue";
 import FlaskItem from "./FlaskItem.vue";
 import ButtonItem from "./shared/ButtonItem.vue";
 import { mapState } from "vuex";
+import { mapMutations } from "vuex";
 export default {
 	data: () => ({ modalVisible: false }),
 	name: "ResultsBox",
@@ -75,12 +81,20 @@ export default {
 		},
 	},
 	methods: {
+		...mapMutations({ addColor: "ADD_COLOR" }),
 		saveColor() {
+			/* const [red, green, blue] = this.mixtures.map((item) =>
+				Math.floor(item.amount * 2.5)
+			);
+			this.$store.commit("ADD_COLOR", { red, green, blue }); */
 			const [red, green, blue] = this.mixtures.map((item) =>
 				Math.floor(item.amount * 2.5)
 			);
-			this.$store.commit("ADD_COLOR", { red, green, blue });
+			this.addColor({ red, green, blue });
 		},
+		/* 	addColor(payload) {
+			this.$store.commit("ADD_COLOR", payload);
+		}, */
 	},
 	computed: {
 		...mapState(["colors"]),
@@ -126,26 +140,4 @@ export default {
 		margin-top: -0.5rem;
 	}
 }
-/* .slide-fade-enter-active {
-  transition: opacity .3s;
-}
-
-.slide-fade-enter-from {
-  opacity: 0;
-}
-
-.slide-fade-enter-to {
-  opacity: 1;
-}
-.slide-fade-leave-active {
-  transition: opacity .3s;
-}
-
-.slide-fade-leave-from {
-  opacity: 1;
-}
-
-.slide-fade-leave-to {
-  opacity: 0;
-} */
 </style>

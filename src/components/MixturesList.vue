@@ -1,12 +1,7 @@
 <template>
   <!-- mixtures -->
   <ul class="mixtures">
-    <!-- <mixture-item
-      :key="index"
-      v-for="(mixture, index) in mixtures"
-      :mixture="mixture"
-      @increment="$emit('increment', index)"
-      @decrement="$emit('decrement', index)" /> -->
+   
       <flask-item
         :key="index"
         v-for="(mixture, index) in mixtures"
