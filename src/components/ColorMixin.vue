@@ -18,11 +18,12 @@
 <script>
 import MixturesList from './MixturesList'
 import ResultBox from './ResultBox'
+import { mapGetters} from 'vuex'
 
 export default {
   name: 'ColorMixin',
   data: () => ({
-    mixtures: [
+   /*  mixtures: [
       {
         variant: 'red',
         amount: 20
@@ -34,7 +35,7 @@ export default {
       {
         variant: 'blue',
         amount: 40
-      }]
+      }] */
   }),
   methods: {
     increment (index) {
@@ -50,9 +51,11 @@ export default {
     },
 
     refresh () {
-      this.mixtures = this.mixtures.map(item => ({ ...item, amount: 50 }))
+      /* this.mixtures = this.mixtures.map(item => ({ ...item, amount: 50 })) */
+      this.$store.commit('RESET_COLORS')
     }
   },
+  computed: mapGetters({ mixtures: 'MixturesList2' }),
   components: {
     MixturesList,
     ResultBox

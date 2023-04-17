@@ -70,7 +70,7 @@ import ModalItem from "./ModalItem.vue";
 import FlaskItem from "./FlaskItem.vue";
 import ButtonItem from "./shared/ButtonItem.vue";
 import { mapState } from "vuex";
-import { mapMutations, mapGetters } from "vuex";
+import { /* mapMutations, */ mapGetters, mapActions } from "vuex";
 export default {
 	data: () => ({ modalVisible: false }),
 	name: "ResultsBox",
@@ -81,17 +81,19 @@ export default {
 		},
 	},
 	methods: {
-		...mapMutations({ addColor: "ADD_COLOR" }),
+		/* ...mapMutations({ addColor: "ADD_COLOR" }), */
 		saveColor() {
+			this.addColor(this.mixtures);
 			/* const [red, green, blue] = this.mixtures.map((item) =>
 				Math.floor(item.amount * 2.5)
 			);
 			this.$store.commit("ADD_COLOR", { red, green, blue }); */
-			const [red, green, blue] = this.mixtures.map((item) =>
+			/* const [red, green, blue] = this.mixtures.map((item) =>
 				Math.floor(item.amount * 2.5)
 			);
-			this.addColor({ red, green, blue });
+			this.addColor({ red, green, blue }); */
 		},
+		...mapActions(["addColor"]),
 		/* 	addColor(payload) {
 			this.$store.commit("ADD_COLOR", payload);
 		}, */
